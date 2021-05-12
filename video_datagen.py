@@ -74,7 +74,7 @@ class VideoDirIterator(image.Iterator):
         for i, j in enumerate(index_array):
             # get filename, regard the filenames as video dir full path
             vfname = self.filenames[j]
-            frame_list = os.listdir(vfname)
+            frame_list = sorted(os.listdir(vfname))
             # get list of frames, and choose clip_size of frames
             if self.allow_lt_clip_size and len(frame_list)<=self.clip_size:
                 # repeat the frame list, if the length of list is less than clip size
